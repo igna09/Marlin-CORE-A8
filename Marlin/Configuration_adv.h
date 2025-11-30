@@ -933,10 +933,10 @@
 
 //#define SENSORLESS_BACKOFF_MM  { 2, 2, 0 }  // (linear=mm, rotational=°) Backoff from endstops before sensorless homing
 
-#define HOMING_BUMP_MM      { 5, 5, 2 }       // (linear=mm, rotational=°) Backoff from endstops after first bump
+#define HOMING_BUMP_MM      { 0, 0, 2 }       // (linear=mm, rotational=°) Backoff from endstops after first bump
 #define HOMING_BUMP_DIVISOR { 2, 2, 4 }       // Re-Bump Speed Divisor (Divides the Homing Feedrate)
 
-//#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (linear=mm, rotational=°) Backoff from endstops after homing
+#define HOMING_BACKOFF_POST_MM { 2, 2, 0 }  // (linear=mm, rotational=°) Backoff from endstops after homing
 //#define XY_COUNTERPART_BACKOFF_MM 0         // (mm) Backoff X after homing Y, and vice-versa
 
 //#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
@@ -3067,8 +3067,8 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(X)
-    #define X_CURRENT       650        // (mA) RMS current. Multiply by 1.414 for peak current.
-    #define X_CURRENT_HOME  400  // (mA) RMS current for homing. (Typically lower than *_CURRENT.)
+    #define X_CURRENT       700        // (mA) RMS current. Multiply by 1.414 for peak current.
+    #define X_CURRENT_HOME  500  // (mA) RMS current for homing. (Typically lower than *_CURRENT.)
     #define X_MICROSTEPS     16        // 0..256
     #define X_RSENSE          0.11
     #define X_CHAIN_POS      -1        // -1..0: Not chained. 1: MCU MOSI connected. 2: Next in chain, ...
@@ -3087,8 +3087,8 @@
   #endif
 
   #if AXIS_IS_TMC_CONFIG(Y)
-    #define Y_CURRENT       650
-    #define Y_CURRENT_HOME  400
+    #define Y_CURRENT       700
+    #define Y_CURRENT_HOME  500
     #define Y_MICROSTEPS     16
     #define Y_RSENSE          0.11
     #define Y_CHAIN_POS      -1
@@ -3514,9 +3514,9 @@
 
   #if ANY(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
-    #define X_STALL_SENSITIVITY  165
+    #define X_STALL_SENSITIVITY  145
     #define X2_STALL_SENSITIVITY X_STALL_SENSITIVITY
-    #define Y_STALL_SENSITIVITY  165
+    #define Y_STALL_SENSITIVITY  145
     #define Y2_STALL_SENSITIVITY Y_STALL_SENSITIVITY
     //#define Z_STALL_SENSITIVITY  8
     //#define Z2_STALL_SENSITIVITY Z_STALL_SENSITIVITY

@@ -984,10 +984,10 @@
 
 // Enable one of the options below for CoreXY, CoreXZ, or CoreYZ kinematics,
 // either in the usual order or reversed
-//#define COREXY //previous
+#define COREXY //previous
 //#define COREXZ
 //#define COREYZ
-#define COREYX
+// #define COREYX
 //#define COREZX
 //#define COREZY
 
@@ -1355,7 +1355,7 @@
  * Override with M203
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_MAX_FEEDRATE          { 400, 400, 8, 100 }
+#define DEFAULT_MAX_FEEDRATE          { 200, 200, 8, 100 }
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
 #if ENABLED(LIMITED_MAX_FR_EDITING)
@@ -1458,10 +1458,10 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+// #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-//#define USE_PROBE_FOR_Z_HOMING
+// #define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -1723,13 +1723,13 @@
 
 // X and Y axis travel speed between probes.
 // Leave undefined to use the average of the current XY homing feedrate.
-#define XY_PROBE_FEEDRATE    (100*60) // (mm/min)
+#define XY_PROBE_FEEDRATE    (40*60) // (mm/min)
 
 // Feedrate for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_FEEDRATE_FAST  (4*60) // (mm/min)
 
 // Feedrate for the "accurate" probe of each point
-#define Z_PROBE_FEEDRATE_SLOW ((Z_PROBE_FEEDRATE_FAST / 2) / 2) // (mm/min)
+#define Z_PROBE_FEEDRATE_SLOW (Z_PROBE_FEEDRATE_FAST / 4) // (mm/min)
 
 /**
  * Probe Activation Switch
@@ -1798,7 +1798,7 @@
 #define Z_CLEARANCE_BETWEEN_PROBES  5 // (mm) Z Clearance between probe points
 #define Z_CLEARANCE_MULTI_PROBE     5 // (mm) Z Clearance between multiple probes
 #define Z_PROBE_ERROR_TOLERANCE     3 // (mm) Tolerance for early trigger (<= -probe.offset.z + ZPET)
-//#define Z_AFTER_PROBING           5 // (mm) Z position after probing is done
+#define Z_AFTER_PROBING           0 // (mm) Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // (mm) Farthest distance below the trigger-point to go before stopping
 
@@ -2417,8 +2417,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT 30  // (mm) X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT 30  // (mm) Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT 110  // (mm) X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT 110  // (mm) Y point for Z homing
   //#define Z_SAFE_HOMING_POINT_ABSOLUTE  // Ignore home offsets (M206) for Z homing position
 #endif
 
@@ -2426,7 +2426,7 @@
 #define HOMING_FEEDRATE_MM_M { (40*60), (40*60), (4*60) }
 
 // Edit homing feedrates with M210 and MarlinUI menu items
-//#define EDITABLE_HOMING_FEEDRATE
+// #define EDITABLE_HOMING_FEEDRATE
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
@@ -2575,7 +2575,7 @@
   #define NOZZLE_PARK_MOVE          0   // Park motion: 0 = XY Move, 1 = X Only, 2 = Y Only, 3 = X before Y, 4 = Y before X
   #define NOZZLE_PARK_Z_RAISE_MIN   2   // (mm) Always raise Z by at least this distance
   #define NOZZLE_PARK_XY_FEEDRATE 100   // (mm/s) X and Y axes feedrate (also used for delta Z axis)
-  #define NOZZLE_PARK_Z_FEEDRATE    5   // (mm/s) Z axis feedrate (not used for delta printers)
+  #define NOZZLE_PARK_Z_FEEDRATE    2   // (mm/s) Z axis feedrate (not used for delta printers)
 #endif
 
 /**
@@ -2749,7 +2749,7 @@
  * SD Card support is disabled by default. If your controller has an SD slot,
  * you must uncomment the following option or it won't work.
  */
-//#define SDSUPPORT
+#define SDSUPPORT
 
 /**
  * SD CARD: ENABLE CRC
