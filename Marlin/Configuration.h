@@ -44,6 +44,8 @@
 // #define TEMP_0_PIN                    P0_23_A0  // A1 (T1) - (68) - TEMP_0_PIN
 #define X_HARDWARE_SERIAL Serial3
 #define Y_HARDWARE_SERIAL Serial3
+#define Z_HARDWARE_SERIAL Serial3
+#define E0_HARDWARE_SERIAL Serial3
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -163,7 +165,7 @@
  */
 #define X_DRIVER_TYPE  TMC2209
 #define Y_DRIVER_TYPE  TMC2209
-#define Z_DRIVER_TYPE  TMC2130_STANDALONE
+#define Z_DRIVER_TYPE  TMC2209
 //#define X2_DRIVER_TYPE A4988
 //#define Y2_DRIVER_TYPE A4988
 //#define Z2_DRIVER_TYPE A4988
@@ -175,7 +177,7 @@
 //#define U_DRIVER_TYPE  A4988
 //#define V_DRIVER_TYPE  A4988
 //#define W_DRIVER_TYPE  A4988
-#define E0_DRIVER_TYPE A4988
+#define E0_DRIVER_TYPE TMC2209
 //#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
