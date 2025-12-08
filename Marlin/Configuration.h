@@ -46,6 +46,9 @@
 #define Y_HARDWARE_SERIAL Serial3
 #define Z_HARDWARE_SERIAL Serial3
 #define E0_HARDWARE_SERIAL Serial3
+#define TEMP_0_PIN 58
+#define TEMP_BED_PIN 15
+#define TEMP_1_PIN 13
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -591,7 +594,7 @@
  *   998 : Dummy Table that ALWAYS reads 25°C or the temperature defined below.
  *   999 : Dummy Table that ALWAYS reads 100°C or the temperature defined below.
  */
-#define TEMP_SENSOR_0 1 //11
+#define TEMP_SENSOR_0 11 //11
 #define TEMP_SENSOR_1 0
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
