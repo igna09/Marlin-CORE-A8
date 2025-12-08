@@ -46,9 +46,11 @@
 #define Y_HARDWARE_SERIAL Serial3
 #define Z_HARDWARE_SERIAL Serial3
 #define E0_HARDWARE_SERIAL Serial3
-#define TEMP_0_PIN 58
+// #define TEMP_0_PIN 58
 #define TEMP_BED_PIN 15
-#define TEMP_1_PIN 13
+#define TEMP_1_PIN 14
+#define X_MIN_PIN 25
+#define Y_MIN_PIN 23
 
 //===========================================================================
 //============================= Getting Started =============================
@@ -1285,7 +1287,7 @@
 #define X_MAX_ENDSTOP_HIT_STATE HIGH
 #define Y_MIN_ENDSTOP_HIT_STATE HIGH
 #define Y_MAX_ENDSTOP_HIT_STATE HIGH
-#define Z_MIN_ENDSTOP_HIT_STATE HIGH
+#define Z_MIN_ENDSTOP_HIT_STATE LOW
 #define Z_MAX_ENDSTOP_HIT_STATE HIGH
 #define I_MIN_ENDSTOP_HIT_STATE HIGH
 #define I_MAX_ENDSTOP_HIT_STATE HIGH
@@ -2427,10 +2429,10 @@
 #endif
 
 // Homing speeds (linear=mm/min, rotational=°/min)
-#define HOMING_FEEDRATE_MM_M { (40*60), (40*60), (4*60) }
+#define HOMING_FEEDRATE_MM_M { (80*60), (80*60), (4*60) }
 
 // Edit homing feedrates with M210 and MarlinUI menu items
-// #define EDITABLE_HOMING_FEEDRATE
+#define EDITABLE_HOMING_FEEDRATE
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
